@@ -1,0 +1,120 @@
+:root{
+  /*-----Colours-----*/
+  --White: hsl(0, 0%, 100%);
+  --GrayishBlue: hsl(220, 15%, 55%);
+  --DarkBlue: hsl(218, 44%, 22%);
+  --LightGray: hsl(212, 45%, 89%);
+  /* Secondary Colours */
+  --LightBlue: #2c7dfa;
+  --CircleBlue: #3785ff;
+  /* Border-radius */
+  --bR: 10px;
+}
+
+html,body{
+  height: 100%;
+  display: grid;
+  background-color: var(--LightGray);
+  /* overflow: hidden; */
+  /*-----Fonts------*/
+  font-family: 'Outfit', sans-serif;
+  text-align: center;
+}
+
+img{
+  max-height: 100%;
+  max-width: 100%;
+}
+
+#root{
+  margin: auto;
+  min-width: 300px;
+  width: 300px;
+}
+
+main{
+  background-color: var(--White);
+  padding: 15px;
+  padding-bottom: auto;
+  border-radius: var(--bR);
+}
+
+.qrArea{
+  width: 100%;
+  padding-bottom: 100%;
+  height: 0;
+  background-color: var(--LightBlue);
+  border-radius: var(--bR);
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+canvas{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+  z-index: 100;             
+}
+
+.firstCircle{
+  background-color: var(--CircleBlue);
+  height: 150px;
+  width: 150px;
+  border-bottom-right-radius: 100%;
+  /* border-top-left-radius: var(--bR); */
+  overflow: hidden;
+}
+
+.secondCircle{
+  background-color: var(--CircleBlue);
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  border-top-left-radius: 100%;
+  /* border-bottom-right-radius: var(--bR); */
+  bottom: 0;
+  right: 0;
+}
+
+/* .justQR{
+  background-color: var(--LightBlue);
+} */
+
+.heading{
+  padding: 20px 0;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.note{
+  color: var(--GrayishBlue);
+  margin: 20px 0;
+  font-weight: 500;
+}
+
+.urlInput{
+  outline: none;
+  border: 2px solid var(--LightGray) ;
+  border-radius: 7px;
+  padding: 10px;
+  width: calc(260px - calc(294px - 260px));
+  /* margin-bottom: 10px; */
+}
+
+.urlInput::placeholder{
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--GrayishBlue);
+}
+
+input:focus{
+  border: 2px solid var(--LightBlue);
+}
+
+@media only screen and (max-width: 750px) {
+  html{
+    overflow: auto;
+  }
+}
